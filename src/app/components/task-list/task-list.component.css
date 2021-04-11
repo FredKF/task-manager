@@ -1,0 +1,25 @@
+.list{
+    padding: 2em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    margin: 0.5em;
+    transition: all 0.5s;
+    border: solid rgb(24, 82, 24);    
+}
+
+.completed{
+    background-color: rgb(77, 216, 77);
+}
+
+.completed-icon, .delete-icon{    
+    width: 1.5em;
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+<input type="text" placeholder="introduce nombre de la tarea: "(keyup)="addTask($event)" >
+<div class="list">
+    <div class="task" *ngFor="let task of list; let i=index" [class.completed]="task.completed">
+        <h4>{{task.name}}</h4>
+        <div class="buttons">
+            <img src="assets/images/completed.png" class="completed-icon" alt="completed-icon" (click)="toggleCompleteTask(task)">
+            <img src="assets/images/delete.png" class="delete-icon" alt="delete-icon" (click)="deleteTask(i)">
+        </div>
+    </div>
+</div>
