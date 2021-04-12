@@ -1,4 +1,4 @@
-<input type="text" placeholder="introduce nombre de la tarea: "(keyup)="addTask($event)" >
+<input type="text" placeholder="New task: "(keyup)="addTask($event)" >
 <div class="list">
     <div class="task" *ngFor="let task of list; let i=index" [class.completed]="task.completed">
         <h4>{{task.name}}</h4>
