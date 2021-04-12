@@ -25,7 +25,6 @@ export class TaskListComponent {
   }
 
   deleteTask(index : number){
-    //el tercer parametro es para reemplazar algo
     this.list.splice(index, 1);
   }
 }
