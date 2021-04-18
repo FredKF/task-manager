@@ -1,0 +1,7 @@
+<div class="container-fluid"> 
+    <div class="row">
+        <app-task-list class="col-sm-auto" *ngFor="let taskList of TaskList; let i=index" [taskList]="taskList"></app-task-list>        
+        <a href="#" class="col-sm open-list" (click)="addNewList($event)"><span>+ New List</span></a>
+    </div>
+</div>
+

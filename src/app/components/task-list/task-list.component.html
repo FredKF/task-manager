@@ -1,10 +1,5 @@
-<input type="text" placeholder="New task: "(keyup)="addTask($event)" >
 <div class="list">
-    <div class="task" *ngFor="let task of list; let i=index" [class.completed]="task.completed">
-        <h4>{{task.name}}</h4>
-        <div class="buttons">
-            <img src="assets/images/completed.png" class="completed-icon" alt="completed-icon" (click)="toggleCompleteTask(task)">
-            <img src="assets/images/delete.png" class="delete-icon" alt="delete-icon" (click)="deleteTask(i)">
-        </div>
-    </div>
+    <h2>List 1</h2>
+    <app-task-item *ngFor="let taskItem of taskList; let i=index" [taskList]="taskList" [taskItem]="taskItem"></app-task-item>
+    <a href="#" (click)="addNewTask($event)">+ New Task</a>
 </div>

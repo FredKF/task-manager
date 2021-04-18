@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TaskList } from 'src/app/models/task-list.model';
 import { Task } from 'src/app/models/task.model';
 
 @Component({
@@ -7,24 +8,18 @@ import { Task } from 'src/app/models/task.model';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
-  list: Task[] = [];
-  constructor() { }  
+  taskList: TaskList[] = [];   
+  taskItem: Task;
+  constructor() {}    
 
-  addTask(ev: KeyboardEvent): void{
-    if(ev.key==="Enter"){
-      this.list.push({
-        name: (ev.target as HTMLInputElement).value, 
-        completed: false
-      });
-      (ev.target as HTMLInputElement).value = "";
-    }
-  }
-
-  toggleCompleteTask(task: Task): void{
-    task.completed = !task.completed;
+  addNewTask(ev): void{
+      this.taskList.push({
+        name : "list1",
+        taskItemList: [this.taskItem]
+      });      
   }
 
   deleteTask(index : number){
-    this.list.splice(index, 1);
+    // this.taskItemList.splice(index, 1);
   }
 }
