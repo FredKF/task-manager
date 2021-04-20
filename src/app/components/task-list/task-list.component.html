@@ -1,5 +1,8 @@
 <div class="list">
     <h2>List 1</h2>
-    <app-task-item *ngFor="let taskItem of taskList; let i=index" [taskList]="taskList" [taskItem]="taskItem"></app-task-item>
+    <app-task-item *ngFor="let taskItem of taskList; let i=index"
+    [taskList]="taskList"
+    [taskItem]="taskItem"
+    [index]="i"></app-task-item>
     <a href="#" (click)="addNewTask($event)">+ New Task</a>
 </div>

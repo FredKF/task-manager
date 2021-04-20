@@ -8,15 +8,15 @@ import { Task } from 'src/app/models/task.model';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
-  taskList: TaskList[] = [];   
+  taskList: TaskList[] = [];
   taskItem: Task;
-  constructor() {}    
+  constructor() {}
 
   addNewTask(ev): void{
       this.taskList.push({
-        name : "list1",
+        name : "list" + this.taskList.length,
         taskItemList: [this.taskItem]
-      });      
+      });
   }
 
   deleteTask(index : number){

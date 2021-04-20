@@ -9,16 +9,18 @@ import { Task } from 'src/app/models/task.model';
 export class TaskItemComponent implements OnInit {
 
   @Input() taskList: Task[];
+  @Input() index: number;
+  @Input() taskItem: Task;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggleCompleteTask(task: Task): void{
-    task.completed = !task.completed;
+  toggleCompleteTask(taskItem: Task): void{
+    taskItem.completed = !taskItem.completed;
   }
 
-  deleteTask(index : number){
+  deleteTask(index: number){
     this.taskList.splice(index, 1);
   }
 }

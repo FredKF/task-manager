@@ -1,7 +1,13 @@
-<div class="task"> 
+<div class="task" [class.completed]="taskItem.completed" >
     <h4>Tarea</h4>
     <div class="buttons">
-        <img src="assets/images/completed.png" class="completed-icon" alt="task-completed">
-        <img src="assets/images/delete.png" class="delete-icon" alt="delete-task" (click)="deleteTask($event)" >
+        <img src="assets/images/completed.png"
+          class="completed-icon"
+          alt="task-completed"
+          (click)="toggleCompleteTask(taskItem)">
+        <img src="assets/images/delete.png"
+          class="delete-icon"
+          alt="delete-task"
+          (click)="deleteTask(index)">
     </div>
 </div>
