@@ -8,7 +8,7 @@ import { Task } from 'src/app/models/task.model';
 })
 export class TaskItemComponent implements OnInit {
 
-  @Input() taskItem: Task;
+  @Input() taskList: Task[];
   constructor() { }
 
   ngOnInit(): void {
@@ -19,7 +19,6 @@ export class TaskItemComponent implements OnInit {
   }
 
   deleteTask(index : number){
-    // this.taskItemList.splice(index, 1);
+    this.taskList.splice(index, 1);
   }
-
 }
