@@ -1,10 +1,10 @@
-<div class="task" [class.completed]="taskItem.completed" >
+<div class="task" [class.completed]="task.completed" >
     <h4>Tarea</h4>
     <div class="buttons">
         <img src="assets/images/completed.png"
           class="completed-icon"
           alt="task-completed"
-          (click)="toggleCompleteTask(taskItem)">
+          (click)="toggleCompleteTask(task)">
         <img src="assets/images/delete.png"
           class="delete-icon"
           alt="delete-task"

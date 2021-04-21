@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { TaskList } from 'src/app/models/task-list.model';
+import { Component, Input, Output,EventEmitter  } from '@angular/core';
+import { ListContainer } from 'src/app/models/list-container.model';
 import { Task } from 'src/app/models/task.model';
 
 @Component({
@@ -8,19 +8,22 @@ import { Task } from 'src/app/models/task.model';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
-  @Input() index: number; 
-  taskList: TaskList[] = [];
-  taskItem: Task;
-  constructor() {}
 
-  addNewTask(taskItem: Task): void{
-      this.taskList.push({
-        name : "task" ,
-        taskItemList: [taskItem]
+  @Input() listContainerCol: ListContainer[];
+  @Input() listContainer: ListContainer;
+  @Input() index: number;
+  task: Task;
+
+  constructor() { }
+
+  addNewTask(): void{
+      this.listContainer.taskList.push({
+        name : "task1",
+        completed : false
       });
   }
 
   deleteList(index: number){
-    this.taskList.splice(index , 1);
+    this.listContainerCol.splice(index , 1);
   }
 }

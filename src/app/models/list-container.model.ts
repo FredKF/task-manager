@@ -1,5 +1,6 @@
-import { TaskList } from "./task-list.model";
+import { Task } from "./task.model";
 
 export interface ListContainer{
-    taskLists: TaskList[];
+    name: string;
+    taskList: Task[];
 }

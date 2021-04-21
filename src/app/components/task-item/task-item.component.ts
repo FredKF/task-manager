@@ -10,14 +10,14 @@ export class TaskItemComponent implements OnInit {
 
   @Input() taskList: Task[];
   @Input() index: number;
-  @Input() taskItem: Task;
+  @Input() task: Task;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggleCompleteTask(taskItem: Task): void{
-    taskItem.completed = !taskItem.completed;
+  toggleCompleteTask(task: Task): void{
+    task.completed = !task.completed;
   }
 
   deleteTask(index: number){
