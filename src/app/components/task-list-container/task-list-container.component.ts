@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TaskList } from 'src/app/models/task-list.model';
 import { Task } from 'src/app/models/task.model';
 
 @Component({
@@ -6,19 +7,24 @@ import { Task } from 'src/app/models/task.model';
   templateUrl: './task-list-container.component.html',
   styleUrls: ['./task-list-container.component.css']
 })
-export class TaskListContainerComponent implements OnInit {
-
-  TaskList: Task[] = [];
+export class TaskListContainerComponent implements OnInit {  
+  
+  taskList: TaskList [] = [];   
+  i : number;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addNewList(ev){
-    this.TaskList.push({
-        name: (ev.target as HTMLInputElement).value, 
-        completed: false
-      });
-      (ev.target as HTMLInputElement).value = "";
+  addNewList(){
+    this.taskList.push({
+        name: "",
+        taskItemList: []
+      });      
+  }
+
+
+  deleteList(i: number){
+    this.taskList.splice(i, 1);
   }
 }

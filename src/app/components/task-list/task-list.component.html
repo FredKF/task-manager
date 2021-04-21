@@ -1,8 +1,12 @@
 <div class="list">
-    <h2>List 1</h2>
+    <h2>List 1</h2>  
+    <img src="assets/images/delete.png"
+        class="delete-icon"
+        alt="delete-task"
+        (click)="deleteList(index)">
     <app-task-item *ngFor="let taskItem of taskList; let i=index"
-    [taskList]="taskList"
-    [taskItem]="taskItem"
-    [index]="i"></app-task-item>
-    <a href="#" (click)="addNewTask($event)">+ New Task</a>
+        [taskList]="taskList"
+        [taskItem]="taskItem"
+        [index]="i"></app-task-item>    
+    <a href="#" (click)="addNewTask(taskItem)">+ New Task</a>
 </div>
