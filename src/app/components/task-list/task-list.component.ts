@@ -13,6 +13,7 @@ export class TaskListComponent {
   @Input() listContainer: ListContainer;
   @Input() index: number;
   task: Task;
+  visible:true;
 
   constructor() { }
 

@@ -21,3 +21,7 @@
 .completed{
     background-color: rgb(77, 216, 77);
 }
+
+.hidden{
+  visibility: hidden;
+}

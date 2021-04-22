@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div class="collapsible"><input type="text"></div>
+  <div class="collapsible" [class.hidden]="true"><input type="text"></div>
 
   <app-task-item *ngFor="let task of listContainer.taskList; let i=index" [taskList]="listContainer.taskList"
     [task]="task" [index]="i"></app-task-item>
