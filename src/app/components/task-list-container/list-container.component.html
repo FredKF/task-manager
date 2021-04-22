@@ -7,9 +7,13 @@
             [index]="i"
             [listContainerCol]= "listContainer">
             </app-task-list>
-        <a href="#" class="col-sm open-list"
-            (click)="addNewList()">
-        <span>+ New List</span></a>
+            <div class="col-sm">
+              <a href="#"
+                class="open-list"
+                (click)="addNewList()">
+                <span>+ New List</span>
+              </a>
+            </div>
     </div>
 </div>
 

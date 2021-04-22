@@ -1,12 +1,15 @@
 <div class="list">
+  <div class="list-header">
     <h2>List</h2>
-    <img src="assets/images/delete.png"
-        class="delete-icon"
-        alt="delete-task"
-        (click)="deleteList(index)">
-    <app-task-item *ngFor="let task of listContainer.taskList; let i=index"
-        [taskList]="listContainer.taskList"
-        [task]="task"
-        [index]="i"></app-task-item>
+    <div class="buttons">
+      <img src="assets/images/delete.png" class="delete-icon" alt="delete-task" (click)="deleteList(index)">
+    </div>
+  </div>
+
+  <div class="collapsible"><input type="text"></div>
+
+  <app-task-item *ngFor="let task of listContainer.taskList; let i=index" [taskList]="listContainer.taskList"
+    [task]="task" [index]="i"></app-task-item>
     <a href="#" (click)="addNewTask()">+ New Task</a>
 </div>
+
