@@ -5,6 +5,7 @@
     width: 250px;
     align-items: center;
     box-sizing: content-box;
+    min-height: 150px;
 }
 
 .list-header{
