@@ -11,6 +11,7 @@ export class TaskItemComponent implements OnInit {
   @Input() taskList: Task[];
   @Input() index: number;
   @Input() task: Task;
+  
   constructor() { }
 
   ngOnInit(): void {

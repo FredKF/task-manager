@@ -2,7 +2,6 @@ import { Component, Input, Output,EventEmitter  } from '@angular/core';
 import { ListContainer } from 'src/app/models/list-container.model';
 import { Task } from 'src/app/models/task.model';
 
-
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
@@ -19,13 +18,18 @@ export class TaskListComponent {
   constructor() { }
 
   addNewTask(): void{
-    if(this.toggleVisible())
-    {
-      this.listContainer.taskList.push({
-        name : "task1",
-        completed : false
-      });
-    }
+    this.visible = true;
+  }
+
+  cancelNewTask(): void{
+    this.visible = false;
+  }
+
+  setNewTask(){
+    this.listContainer.taskList.push({
+      name : "",
+      completed : false
+    });
   }
 
   deleteList(index: number){
