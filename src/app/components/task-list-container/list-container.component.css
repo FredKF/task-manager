@@ -1,8 +1,18 @@
-a{
-  position: absolute;
-
+button{        
+    background-color: rgb(31, 202, 31);
+    color: honeydew;
+    border: none;
+    margin-bottom: 15px;
 }
 
-.open-list{
+.inner-form{
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;
+    width: 320px;
+}
 
+input{
+    height: 36px;
+    border-radius: 5px;
 }
