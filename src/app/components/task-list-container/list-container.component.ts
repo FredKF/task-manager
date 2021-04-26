@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ListContainer } from 'src/app/models/list-container.model';
 
 @Component({
