@@ -10,7 +10,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ExpansionPanelComponent} from './shared/expansion-panel/expansion-panel.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
@@ -21,7 +21,7 @@ import {MatInputModule} from '@angular/material/input';
     TaskListComponent,
     TaskItemComponent,
     ListContainerComponent,
-    ExpansionPanelComponent    
+    ExpansionPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +31,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ListContainer } from 'src/app/models/list-container.model';
+
 
 @Component({
   selector: 'app-list-container',
@@ -7,18 +9,22 @@ import { ListContainer } from 'src/app/models/list-container.model';
   styleUrls: ['./list-container.component.css']
 })
 export class ListContainerComponent implements OnInit {
+  inputFormControl = new FormControl('', [
+    Validators.required
+  ]);
 
   listContainer: ListContainer[] = [];
   newList: boolean = false;
   listName: string;
+  disabled: boolean = true;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
   cancelAction(): void{
     this.newList = false;
     this.listName = "";
+    this.inputFormControl.clearValidators();
   }
 
   showListInput(): void{
@@ -26,10 +32,15 @@ export class ListContainerComponent implements OnInit {
   }
 
   addNewList(){
-    this.listContainer.push({
-      name: this.listName,
-      taskList: []
-    });    
-    this.newList = false;
-  }
+    if(this.listName)
+    {
+      this.listContainer.push({
+        name: this.listName,
+        taskList: []
+      });
+        this.listName = "";
+        this.newList = false;
+        this.inputFormControl.clearValidators();
+      }
+    }
 }

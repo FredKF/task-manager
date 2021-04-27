@@ -1,13 +1,7 @@
 <div class="task" [class.completed]="task.completed" >
     <h4>{{task.name}}</h4>
     <div class="buttons">
-        <img src="assets/images/completed.png"
-          class="completed-icon"
-          alt="task-completed"
-          (click)="toggleCompleteTask(task)">
-        <img src="assets/images/delete.png"
-          class="delete-icon"
-          alt="delete-task"
-          (click)="deleteTask(index)">
+      <mat-icon style="cursor: pointer" (click)="toggleCompleteTask(task)">playlist_add_check</mat-icon>
+      <mat-icon style="cursor: pointer" (click)="deleteTask(index)">delete</mat-icon>
     </div>
 </div>

@@ -1,18 +1,42 @@
-button{        
-    background-color: rgb(31, 202, 31);
+button{
+    background-color: rgb(7, 190, 7);
     color: honeydew;
     border: none;
     margin-bottom: 15px;
 }
 
-.inner-form{
+form{
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     justify-content: space-between;
     width: 320px;
+    background-color: rgb(210, 210, 255);
+    border-radius: 2px;
+    padding: 10px;
 }
+
+.buttons{
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accept-button:hover,
+.cancel-button:hover{
+  cursor: pointer;
+  background-color:grey;
+  color: whitesmoke;
+  border-radius: 2px;
+}
+
 
 input{
     height: 36px;
     border-radius: 5px;
+}
+
+button:disabled{
+  background: #dddddd;
 }

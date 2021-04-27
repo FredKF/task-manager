@@ -2,10 +2,10 @@
   <div class="list-header">
     <h2>{{listContainer.name}}</h2>
     <div class="buttons">
-      <img src="assets/images/delete.png" class="delete-icon" alt="delete-task" (click)="deleteList(index)">
+      <mat-icon style="cursor: pointer" (click)="deleteList(index)">delete</mat-icon>
     </div>
   </div>
   <app-expansion-panel *ngIf="visible" [listContainer]="this.listContainer"></app-expansion-panel>
   <app-task-item *ngFor="let task of listContainer.taskList; let i=index" [taskList]="listContainer.taskList"
-    [task]="task" [index]="i"></app-task-item>    
+    [task]="task" [index]="i"></app-task-item>
 </div>
