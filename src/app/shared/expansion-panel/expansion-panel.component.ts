@@ -10,11 +10,11 @@ import { ListContainer } from 'src/app/models/list-container.model';
 export class ExpansionPanelComponent implements OnInit {
 
   @Input() listContainer: ListContainer;
-  panelOpenState = false;
+  panelOpenState: boolean = false;
   taskText: string;
   constructor() { }
   ngOnInit(): void {
-  } 
+  }
 
   addNewTask() : void{
     this.listContainer.taskList.push({
@@ -23,5 +23,9 @@ export class ExpansionPanelComponent implements OnInit {
     });
     this.taskText = "";
     this.panelOpenState = false;
+  }
+
+  togglePanel(): void{
+    this.panelOpenState = !this.panelOpenState
   }
 }

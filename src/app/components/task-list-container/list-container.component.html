@@ -9,7 +9,7 @@
       <form *ngIf="newList">
         <mat-form-field>
           <input type="text" matInput [formControl]="inputFormControl" [(ngModel)]="listName" type="text"
-            placeholder="List Name:">
+            placeholder="List Name:" name="listInput">
           <mat-error *ngIf="inputFormControl.hasError('required')">Please enter a list name</mat-error>
         </mat-form-field>
         <div class="buttons">

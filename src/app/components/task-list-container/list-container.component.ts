@@ -24,7 +24,7 @@ export class ListContainerComponent implements OnInit {
   cancelAction(): void{
     this.newList = false;
     this.listName = "";
-    this.inputFormControl.clearValidators();
+    this.inputFormControl.markAsUntouched();
   }
 
   showListInput(): void{
@@ -41,6 +41,8 @@ export class ListContainerComponent implements OnInit {
         this.listName = "";
         this.newList = false;
         this.inputFormControl.clearValidators();
+      }else{
+        this.inputFormControl.markAsTouched();
       }
     }
 }

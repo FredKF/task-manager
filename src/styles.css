@@ -2,6 +2,7 @@
 *{
   box-sizing: border-box;
   margin: 0;
+  transition: all 0.2s;
 }
 
 html, body { height: 100%; }
@@ -9,3 +10,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
