@@ -17,7 +17,12 @@
   cursor: pointer;
 }
 
-.delete-icon:hover{
+.list input{
+  display: none;
+}
+
+.delete-icon:hover,
+.edit-icon:hover{
   background-color:grey;
   color: whitesmoke;
   border-radius: 2px;
