@@ -1,4 +1,4 @@
-import { Component, Input, Output,EventEmitter  } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit  } from '@angular/core';
 import { ListContainer } from 'src/app/models/list-container.model';
 import { Task } from 'src/app/models/task.model';
 
@@ -7,14 +7,17 @@ import { Task } from 'src/app/models/task.model';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements AfterViewInit {
 
   @Input() listContainerCol: ListContainer[];
   @Input() listContainer: ListContainer;
   @Input() index: number;
   task: Task;
-  visible:boolean = true;
+  visible: boolean = true;
+  disabled: boolean = false;
+  displayInput: boolean = false;
 
+  @ViewChild('title') listNameElement: ElementRef;
   constructor() { }
 
   addNewTask(): void{
@@ -36,7 +39,19 @@ export class TaskListComponent {
     this.listContainerCol.splice(index , 1);
   }
 
-  toggleVisible(): boolean{
+  toggleVisible(): boolean{        
     return this.visible = !this.visible;
   }
+
+  toggleEditValue(){    
+    this.disabled = !this.disabled;
+    this.ngAfterViewInit();
+    this.displayInput = !this.displayInput;
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.listNameElement.nativeElement.focus();
+    }, 0);    
+  }  
 }

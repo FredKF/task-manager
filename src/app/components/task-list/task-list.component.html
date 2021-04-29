@@ -1,8 +1,9 @@
 <div class="list">
   <div class="list-header">
-    <h2>{{listContainer.name}}</h2>
+    <h2 #title [attr.contenteditable]="disabled">{{listContainer.name}}</h2> 
     <div class="buttons">
       <mat-icon class="delete-icon" (click)="deleteList(index)">delete</mat-icon>
+      <mat-icon class="edit-icon" (click)="toggleEditValue()">edit</mat-icon>
     </div>
   </div>
   <app-expansion-panel *ngIf="visible" [listContainer]="this.listContainer"></app-expansion-panel>
