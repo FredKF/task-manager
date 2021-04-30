@@ -1,7 +1,8 @@
 <div class="task" [class.completed]="task.completed" >
-    <h4>{{task.name}}</h4>
+    <h4 #title [attr.contenteditable]="disabled">{{task.name}}</h4>
     <div class="buttons">
-      <mat-icon style="cursor: pointer" (click)="toggleCompleteTask(task)">playlist_add_check</mat-icon>
-      <mat-icon style="cursor: pointer" (click)="deleteTask(index)">delete</mat-icon>
+      <mat-icon class="completed-icon" (click)="toggleCompleteTask(task)">playlist_add_check</mat-icon>
+      <mat-icon class="delete-icon" (click)="deleteTask(index)">delete</mat-icon>
+      <mat-icon class="edit-icon" (click)="toggleEditValue()" >edit</mat-icon>
     </div>
 </div>

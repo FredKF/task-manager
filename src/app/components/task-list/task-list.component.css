@@ -13,16 +13,13 @@
     padding: 10px 20px 0 20px;
 }
 
-.delete-icon{
-  cursor: pointer;
-}
-
 .list input{
   display: none;
 }
 
 .delete-icon:hover,
 .edit-icon:hover{
+  cursor: pointer;
   background-color:grey;
   color: whitesmoke;
   border-radius: 2px;

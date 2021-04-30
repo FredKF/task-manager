@@ -5,7 +5,6 @@
     </app-task-list>
     <div class="col-sm">
       <button mat-button (click)="showListInput()">New List</button>
-
       <form *ngIf="newList">
         <mat-form-field>
           <input type="text" matInput [formControl]="inputFormControl" [(ngModel)]="listName" placeholder="List Name:" name="listInput">

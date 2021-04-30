@@ -15,7 +15,11 @@
     background-color: rgb(77, 216, 77);
 }
 
-.completed-icon, .delete-icon{
-    width: 1.5em;
-    cursor: pointer;
+.completed-icon:hover,
+.delete-icon:hover,
+.edit-icon:hover{
+  cursor: pointer;
+  background-color:grey;
+  color: whitesmoke;
+  border-radius: 2px;
 }

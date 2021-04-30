@@ -15,7 +15,6 @@ export class TaskListComponent implements AfterViewInit {
   task: Task;
   visible: boolean = true;
   disabled: boolean = false;
-  displayInput: boolean = false;
 
   @ViewChild('title') listNameElement: ElementRef;
   constructor() { }
@@ -39,19 +38,18 @@ export class TaskListComponent implements AfterViewInit {
     this.listContainerCol.splice(index , 1);
   }
 
-  toggleVisible(): boolean{        
+  toggleVisible(): boolean{
     return this.visible = !this.visible;
   }
 
-  toggleEditValue(){    
+  toggleEditValue(){
     this.disabled = !this.disabled;
     this.ngAfterViewInit();
-    this.displayInput = !this.displayInput;
   }
 
   ngAfterViewInit() {
     setTimeout(() => {
       this.listNameElement.nativeElement.focus();
-    }, 0);    
-  }  
+    }, 0);
+  }
 }

@@ -6,11 +6,16 @@
       <mat-panel-title>
         New Task
       </mat-panel-title>
-        <!-- <mat-icon *ngIf="!panelOpenState">expand_more</mat-icon>
-        <mat-icon *ngIf="panelOpenState">expand_less</mat-icon> -->
     </mat-expansion-panel-header>
     <mat-panel-description>
-      <textarea [(ngModel)]="taskText" cols="30"></textarea>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <textarea matInput [formControl]="textareaFormControl" [(ngModel)]="taskText" placeholder="Description" name="textarea"></textarea>
+          <mat-error *ngIf="textareaFormControl.hasError('required')">Please enter a task description</mat-error>
+        </mat-form-field>
+      </form>
+
     </mat-panel-description>
   <mat-action-row>
     <mat-icon class="cancel-button" (click)="togglePanel()">cancel</mat-icon>
