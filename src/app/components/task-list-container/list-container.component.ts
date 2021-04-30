@@ -16,7 +16,8 @@ export class ListContainerComponent implements OnInit {
   listContainer: ListContainer[] = [];
   newList: boolean = false;
   listName: string;
-  disabled: boolean = false;  
+  disabled: boolean = false;
+  searchText: string;
   constructor() { }
 
   ngOnInit(): void {  }

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <app-task-list class="col-sm-auto" *ngFor="let list of listContainer; let i = index" [listContainer]="list"
+    <app-task-list class="col-sm-auto" *ngFor="let list of listContainer | filter: searchText; let i = index" [listContainer]="list"
       [index]="i" [listContainerCol]="listContainer">
     </app-task-list>
     <div class="col-sm">

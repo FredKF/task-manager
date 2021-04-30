@@ -13,6 +13,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { SearcherComponent } from './shared/searcher/searcher.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import {MatInputModule} from '@angular/material/input';
     TaskListComponent,
     TaskItemComponent,
     ListContainerComponent,
-    ExpansionPanelComponent
+    ExpansionPanelComponent,
+    SearcherComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import {MatInputModule} from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

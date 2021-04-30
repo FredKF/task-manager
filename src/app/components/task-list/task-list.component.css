@@ -2,9 +2,10 @@
     min-height: 5vh ;
     border: 2px solid rgba(8, 8, 8, 0.096);
     background-color: rgb(226, 231, 226);
-    width: 250px;
+    width: 270px;
     align-items: center;
     box-sizing: content-box;
+    overflow-y: scroll;
 }
 
 .list-header{
