@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit  } from '@angular/core';
+import { ListContainer } from 'src/app/models/list-container.model';
 import { Task } from 'src/app/models/task.model';
 
 @Component({
@@ -6,25 +7,49 @@ import { Task } from 'src/app/models/task.model';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
-  list: Task[] = [];
-  constructor() { }  
+export class TaskListComponent implements AfterViewInit {
 
-  addTask(ev: KeyboardEvent): void{
-    if(ev.key==="Enter"){
-      this.list.push({
-        name: (ev.target as HTMLInputElement).value, 
-        completed: false
-      });
-      (ev.target as HTMLInputElement).value = "";
-    }
+  @Input() listContainerCol: ListContainer[];
+  @Input() listContainer: ListContainer;
+  @Input() index: number;
+  task: Task;
+  visible: boolean = true;
+  disabled: boolean = false;
+
+  @ViewChild('title') listNameElement: ElementRef;
+  constructor() { }
+
+  addNewTask(): void{
+    this.visible = true;
   }
 
-  toggleCompleteTask(task: Task): void{
-    task.completed = !task.completed;
+  cancelNewTask(): void{
+    this.visible = false;
   }
 
-  deleteTask(index : number){
-    this.list.splice(index, 1);
+  setNewTask(){
+    this.listContainer.taskList.push({
+      name : "",
+      completed : false
+    });
+  }
+
+  deleteList(index: number){
+    this.listContainerCol.splice(index , 1);
+  }
+
+  toggleVisible(): boolean{
+    return this.visible = !this.visible;
+  }
+
+  toggleEditValue(){
+    this.disabled = !this.disabled;
+    this.ngAfterViewInit();
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.listNameElement.nativeElement.focus();
+    }, 0);
   }
 }

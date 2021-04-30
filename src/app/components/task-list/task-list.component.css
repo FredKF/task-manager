@@ -1,28 +1,30 @@
 .list{
-    padding: 2em;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 5vh ;
+    border: 2px solid rgba(8, 8, 8, 0.096);
+    background-color: rgb(226, 231, 226);
+    width: 250px;
+    align-items: center;
+    box-sizing: content-box;
 }
 
-.task{
+.list-header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    margin: 0.5em;
-    transition: all 0.5s;
-    border: solid rgb(24, 82, 24); 
-    background-color: rgb(226, 231, 226);   
-    border-radius: 3px;
-    width: 250px;
+    padding: 10px 20px 0 20px;
+}
+
+.list input{
+  display: none;
+}
+
+.delete-icon:hover,
+.edit-icon:hover{
+  cursor: pointer;
+  background-color:grey;
+  color: whitesmoke;
+  border-radius: 2px;
 }
 
 .completed{
     background-color: rgb(77, 216, 77);
-}
-
-.completed-icon, .delete-icon{    
-    width: 1.5em;
-    cursor: pointer;
 }

@@ -1,0 +1,43 @@
+button{
+    background-color: rgba(109, 119, 109, 0.938);
+    color: honeydew;
+    border: none;
+    margin-bottom: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 320px;
+    border: 2px solid rgba(8, 8, 8, 0.096);
+    background-color: rgb(226, 231, 226);
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.buttons{
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accept-button:hover,
+.cancel-button:hover{
+  cursor: pointer;
+  background-color:grey;
+  color: whitesmoke;
+  border-radius: 2px;
+}
+
+
+input{
+    height: 36px;
+    border-radius: 5px;
+}
+
+button:disabled{
+  background: #dddddd;
+}

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <app-task-list class="col-sm-auto" *ngFor="let list of listContainer; let i = index" [listContainer]="list"
+      [index]="i" [listContainerCol]="listContainer">
+    </app-task-list>
+    <div class="col-sm">
+      <button mat-button (click)="showListInput()">New List</button>
+      <form *ngIf="newList">
+        <mat-form-field>
+          <input type="text" matInput [formControl]="inputFormControl" [(ngModel)]="listName" placeholder="List Name:" name="listInput">
+          <mat-error *ngIf="inputFormControl.hasError('required')">Please enter a list name</mat-error>
+        </mat-form-field>
+        <div class="buttons">
+          <mat-icon class="cancel-button" (click)="cancelAction()">cancel</mat-icon>
+          <mat-icon class="accept-button" (click)="addNewList()">done</mat-icon>
+      </div>
+      </form>
+    </div>
+  </div>
