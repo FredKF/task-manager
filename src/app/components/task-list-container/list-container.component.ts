@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ListContainer } from 'src/app/models/list-container.model';
 
-
 @Component({
   selector: 'app-list-container',
   templateUrl: './list-container.component.html',
@@ -17,7 +16,7 @@ export class ListContainerComponent implements OnInit {
   newList: boolean = false;
   listName: string;
   disabled: boolean = false;
-  searchText: string;
+  searchText: string;  
   constructor() { }
 
   ngOnInit(): void {  }
@@ -32,7 +31,13 @@ export class ListContainerComponent implements OnInit {
     this.newList = true;
   }
 
-  addNewList(){
+  enterSubmit(event: KeyboardEvent): void{
+    if(event.key === 'Enter'){
+      this.addNewList(event);
+    }    
+  }
+
+  addNewList(event: KeyboardEvent){
     if(this.listName)
     {
       this.listContainer.push({
@@ -45,5 +50,9 @@ export class ListContainerComponent implements OnInit {
       }else{
         this.inputFormControl.markAsTouched();
       }
+    }
+
+    getValueFilter(value): string{      
+      return this.searchText = value;
     }
 }

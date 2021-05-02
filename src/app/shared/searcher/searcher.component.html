@@ -6,7 +6,10 @@
   <span>Task Manager</span>
 </div>
 <div class="left-container">
-    <input type="search" matInput placeholder="Search" [(ngModel)]="searchText">
-    <mat-icon class="search-icon">search</mat-icon>
+    <input type="search" 
+    matInput 
+    placeholder="Type to search..."
+    #input
+    (keyup)="emitFilterText(input)">    
   </div>
 </mat-toolbar>
