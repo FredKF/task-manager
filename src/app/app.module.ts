@@ -16,6 +16,8 @@ import {MatInputModule} from '@angular/material/input';
 import { SearcherComponent } from './shared/searcher/searcher.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FilterPipe } from './filter.pipe';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { FilterPipe } from './filter.pipe';
     ListContainerComponent,
     ExpansionPanelComponent,
     SearcherComponent,
-    FilterPipe
+    FilterPipe,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,8 +41,10 @@ import { FilterPipe } from './filter.pipe';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule
   ],
+  entryComponents: [DialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

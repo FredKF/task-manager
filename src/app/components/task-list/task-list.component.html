@@ -2,7 +2,8 @@
   <div class="list-header">
     <h2 #title [attr.contenteditable]="disabled">{{listContainer.name}}</h2> 
     <div class="buttons">
-      <mat-icon class="delete-icon" (click)="deleteList(index)">delete</mat-icon>
+      <!-- <mat-icon class="delete-icon" (click)="deleteList(index)">delete</mat-icon> -->
+      <mat-icon mat-raised-button class="delete-icon" (click)="openDialog(index)">delete</mat-icon>
       <mat-icon class="edit-icon" (click)="toggleEditValue()">edit</mat-icon>
     </div>
   </div>
