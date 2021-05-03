@@ -32,6 +32,11 @@ addNewTask(event: KeyboardEvent) : void /*you can also add new tasks and lists b
 
 ```
 
+<img src="src/assets/images/readme/task-manager-1.png">
+
+<img src="src/assets/images/readme/task-manager-2.png">
+
+
 It's also possible to edit and delete lists and tasks by clicking the "Delete" and "Edit(pencil)" icons. Note that you have to confirm via dialog that you confirm the deletion action
 ```
 openDialog(index: number):void /*will open the confirmation dialog*/
@@ -42,11 +47,19 @@ deleteTask(index: number) /*will delete current task and task*/
 
 ```
 
+<img src="src/assets/images/readme/task-manager-3.png">
+
 When a task is completed you can click the "Complete Task" icon in order to mark it as completed
 ```
 toggleCompleteTask(task: Task): void /*will toggle complete mark*/
 
 ```
+
+The searcher component will filter the tasks list at the same time the user will type. It will filter by containing words.
+
+<img src="src/assets/images/readme/task-manager-5.png">
+
+<img src="src/assets/images/readme/task-manager-4.png">
 
 
 ## Contributing
