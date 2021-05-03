@@ -18,7 +18,13 @@ export class ExpansionPanelComponent {
   taskText: string;
   constructor() { }
 
-  addNewTask() : void{
+  enterSubmit(event: KeyboardEvent): void{
+    if(event.key === 'Enter'){
+      this.addNewTask(event);
+    }
+  }
+
+  addNewTask(event: KeyboardEvent) : void{
     if(this.taskText){
       this.listContainer.taskList.push({
         name: this.taskText,

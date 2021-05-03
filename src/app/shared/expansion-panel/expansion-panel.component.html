@@ -11,7 +11,7 @@
 
       <form class="example-form">
         <mat-form-field class="example-full-width">
-          <textarea matInput [formControl]="textareaFormControl" [(ngModel)]="taskText" placeholder="Description" name="textarea"></textarea>
+          <textarea (keyup)="enterSubmit($event)" matInput [formControl]="textareaFormControl" [(ngModel)]="taskText" placeholder="Description" name="textarea"></textarea>
           <mat-error *ngIf="textareaFormControl.hasError('required')">Please enter a task description</mat-error>
         </mat-form-field>
       </form>
@@ -19,6 +19,6 @@
     </mat-panel-description>
   <mat-action-row>
     <mat-icon class="cancel-button" (click)="togglePanel()">cancel</mat-icon>
-    <mat-icon class="accept-button" (click)="addNewTask()">done</mat-icon>
+    <mat-icon class="accept-button" (click)="addNewTask($event)">done</mat-icon>
   </mat-action-row>
 </mat-expansion-panel>
