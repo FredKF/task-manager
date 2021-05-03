@@ -13,7 +13,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
+import { SearcherComponent } from './shared/searcher/searcher.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FilterPipe } from './filter.pipe';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import {MatTooltipModule} from '@angular/material/tooltip'
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import {MatInputModule} from '@angular/material/input';
     TaskListComponent,
     TaskItemComponent,
     ListContainerComponent,
-    ExpansionPanelComponent
+    ExpansionPanelComponent,
+    SearcherComponent,
+    FilterPipe,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +40,12 @@ import {MatInputModule} from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatTooltipModule
   ],
+  entryComponents: [DialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

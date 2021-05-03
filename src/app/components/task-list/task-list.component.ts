@@ -1,6 +1,8 @@
-import { Component, Input, ViewChild, ElementRef, AfterViewInit  } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit, Inject  } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ListContainer } from 'src/app/models/list-container.model';
 import { Task } from 'src/app/models/task.model';
+import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-task-list',
@@ -17,7 +19,7 @@ export class TaskListComponent implements AfterViewInit {
   disabled: boolean = false;
 
   @ViewChild('title') listNameElement: ElementRef;
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   addNewTask(): void{
     this.visible = true;
@@ -36,6 +38,19 @@ export class TaskListComponent implements AfterViewInit {
 
   deleteList(index: number){
     this.listContainerCol.splice(index , 1);
+  }
+
+  openDialog(index: number):void{
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data:{name: this.listContainerCol[index].name},
+      width: '250px'      
+    });    
+    
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === true){
+        this.deleteList(index);
+      } 
+    });
   }
 
   toggleVisible(): boolean{
