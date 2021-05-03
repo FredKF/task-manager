@@ -4,18 +4,20 @@
   margin-bottom: 20px;
 }
 
-.search-icon{
-  font-size: 30px;
-}
-
-.search-icon:hover{
-  cursor: pointer;
-  background-color:grey;
-}
-
 .left-container{
   margin-right: 20px;
   width: 20%;
   display: flex;
   justify-content: space-around;
+}
+
+.logo img{
+  width: 50px;
+}
+
+.logo{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  align-items: center;
 }

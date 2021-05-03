@@ -2,7 +2,9 @@ import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Task } from 'src/app/models/task.model';
+import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-task-item',
@@ -18,7 +20,7 @@ export class TaskItemComponent {
   disabled: boolean = false;
   @ViewChild('title') taskNameElement: ElementRef;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   toggleCompleteTask(task: Task): void{
     task.completed = !task.completed;
@@ -27,6 +29,21 @@ export class TaskItemComponent {
   deleteTask(index: number): void{
     this.taskList.splice(index, 1);
   }
+
+  openDialog(index: number):void{
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data:{name: this.task.name},
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === true){
+        this.deleteTask(index);
+      }
+    });
+  }
+
+
   toggleEditValue(): void{
     this.disabled = !this.disabled;
     this.ngAfterViewInit();
