@@ -18,7 +18,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FilterPipe } from './filter.pipe';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './shared/dialog/dialog.component';
-import {MatTooltipModule} from '@angular/material/tooltip'
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { FooterComponent } from './shared/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatTooltipModule} from '@angular/material/tooltip'
     ExpansionPanelComponent,
     SearcherComponent,
     FilterPipe,
-    DialogComponent
+    DialogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
