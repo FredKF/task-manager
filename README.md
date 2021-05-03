@@ -49,11 +49,8 @@ toggleCompleteTask(task: Task): void /*will toggle complete mark*/
 ```
 
 
-
 ## Contributing
-Please feel free to contribute and add neqw features and ideas to this app.
-
-Please make sure to update tests as appropriate.
+Please feel free to contribute and add new features and ideas to this app.
 
 ## Author
 [FedeCopperi](https://github.com/FredKF) for [GeeksHubs Academy](https://bootcamp.geekshubsacademy.com/?utm_source=search&utm_medium=googleads&utm_campaign=Brand)
