@@ -18,7 +18,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FilterPipe } from './filter.pipe';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './shared/dialog/dialog.component';
-
+import {MatTooltipModule} from '@angular/material/tooltip'
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     MatInputModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   entryComponents: [DialogComponent],
   providers: [],
