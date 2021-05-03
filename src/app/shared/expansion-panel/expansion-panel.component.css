@@ -1,0 +1,12 @@
+button{
+    margin-right:0 ;
+    float: right;
+    background-color: rgb(31, 202, 31);
+}
+
+.cancel-button:hover, .accept-button:hover{
+  cursor: pointer;
+  background-color:grey;
+  color: whitesmoke;
+  border-radius: 2px;
+}

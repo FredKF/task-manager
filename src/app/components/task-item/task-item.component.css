@@ -1,0 +1,25 @@
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.5s;
+    border: 2px solid rgb(24, 82, 24);
+    background-color: rgb(226, 231, 226);
+    border-radius: 3px;
+    width: 250px;
+    max-width: 250px;
+}
+
+.completed{
+    background-color: rgb(77, 216, 77);
+}
+
+.completed-icon:hover,
+.delete-icon:hover,
+.edit-icon:hover{
+  cursor: pointer;
+  background-color:grey;
+  color: whitesmoke;
+  border-radius: 2px;
+}

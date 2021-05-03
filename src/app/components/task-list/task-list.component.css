@@ -1,0 +1,31 @@
+.list{
+    min-height: 5vh ;
+    border: 2px solid rgba(8, 8, 8, 0.096);
+    background-color: rgb(226, 231, 226);
+    width: 270px;
+    align-items: center;
+    box-sizing: content-box;
+    overflow-y: scroll;
+}
+
+.list-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0 20px;
+}
+
+.list input{
+  display: none;
+}
+
+.delete-icon:hover,
+.edit-icon:hover{
+  cursor: pointer;
+  background-color:grey;
+  color: whitesmoke;
+  border-radius: 2px;
+}
+
+.completed{
+    background-color: rgb(77, 216, 77);
+}
